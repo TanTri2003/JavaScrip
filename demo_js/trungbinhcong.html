@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="number1">
+    <input type="number" id="number2">
+    <input type="number" id="number3">
+    <br>
+    <br>
+    <button onclick="trungbinhcong()">trungbinhcong</button>
+    <p id="ketqua"></p>
+    <script>
+        function trungbinhcong() {
+            let a = +document.getElementById("number1").value;
+            let b = +document.getElementById("number2").value;
+            let c = +document.getElementById("number3").value;
+            let result = (a + b + c) / 3;
+            document.getElementById('ketqua').innerHTML = "result:" + result
+        }
+    </script>
+</body>
+
+</html>

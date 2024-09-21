@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Toán</p><input type="number" id="number1">
+    <br>
+    <p>Lý</p><input type="number" id="number2">
+    <br>
+    <p>Hóa</p><input type="number" id="number3">
+    <br>
+    <br>
+    <button onclick="diemtrungbinh()">Diem trung binh</button>
+    <h1 id="ketqua"></h1>
+    <script>
+        function diemtrungbinh() {
+            let a = +document.getElementById("number1").value;
+            let b = +document.getElementById("number2").value;
+            let c = +document.getElementById("number3").value;
+            let result = ((a + b + c) / 3).toFixed(3);
+            document.getElementById('ketqua').innerHTML = "Điểm trung bình : " + result
+        }
+    </script>
+</body>
+
+</html>

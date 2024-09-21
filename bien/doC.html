@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chuyển đổi từ độ C sang độ F</h2>
+
+    <span for="doC">Nhập độ C:</span>
+    <input type="number" id="doC" placeholder="Nhập giá trị độ C">
+    <button onclick="chuyenDoi()">Chuyển đổi</button>
+    <button onclick="load()">Reset</button>
+    <p id="result"></p>
+
+    <script>
+        function load(){
+            document.getElementById('doC').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+        function chuyenDoi() {
+            let doC = document.getElementById('doC').value;
+            let doF = (doC * 9/5) + 32;
+            document.getElementById('result').innerHTML = `${doC}°C = ${doF.toFixed(2)}°F`;
+        }
+    </script>
+</body>
+</html>

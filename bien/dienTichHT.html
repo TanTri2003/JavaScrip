@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính diện tích hình tròn</h2>
+    <span for="radius">Nhập bán kính (r):</span>
+    <input type="number" id="radius" placeholder="Nhập giá trị bán kính" step="any">
+    <button onclick="dienTich()">Tính diện tích</button>
+    <p id="result"></p>
+    <script>
+        function dienTich() {
+            let banKinh = document.getElementById('radius').value;
+            banKinh = parseFloat(banKinh);
+            let area = Math.PI * Math.pow(banKinh, 2);
+            document.getElementById('result').innerHTML = `Diện tích hình tròn với bán kính ${banKinh} là ${area.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

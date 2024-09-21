@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 onmouseover="change1()" ; id="content">Hello</h1>
+    <button onclick="document.getElementById('content').append('Viet Nam')">change content</button>
+    <button onclick="document.getElementById('content').style.color='red'">change content</button>
+    <script src="myjs.js"></script>
+    <script>
+        function change1(){
+            document.getElementById('content').style.backgroundColor = 'yellow';
+        }
+        console.log("Hello viet nam");
+    </script>
+</body>
+</html>

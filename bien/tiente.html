@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>from currency</th>
+            <th>to currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="money"></td>
+            <td>
+                <select id="from">
+                    <option value="vnd">Việt Nam</option>
+                    <option value="usd">Mỹ</option>
+                </select>
+            </td>
+            <td>
+                <select id="to">
+                    <option value="usd">Mỹ</option>
+                    <option value="vnd">Việt Nam</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="convert()">convert</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+    
+    <script>
+        function convert() {
+            let tien = +document.getElementById('money').value;
+            let from = document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+
+            const chuyenDoi = {
+                'vnd-usd': 1 / 23000,
+                'usd-vnd': 23000,
+                'vnd-vnd': 1,
+                'usd-usd': 1
+            };
+
+            let kq = tien * chuyenDoi[`${from}-${to}`];
+
+            document.getElementById('result').innerHTML = "result : " + kq + to;
+        }
+    </script>
+</body>
+</html>
