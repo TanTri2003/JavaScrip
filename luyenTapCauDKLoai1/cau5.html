@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let baiKiemTra = +prompt("Nhập điểm bài kiểm tra");
+        let baiGiuaKy  = +prompt("Nhập điểm kiểm tra giữa kì");
+        let baiCuoiKy  = +prompt("Nhập điểm kiểm tra cuối kì");
+        let diem = (baiKiemTra+baiGiuaKy+baiCuoiKy)/3;
+        if (diem >= 8) {
+            alert("Loại giỏi");
+        }else if(diem >= 6.5){
+            alert("Loại khá");
+        }else if(diem >= 5){
+            alert("Loại trung bình");
+        }else if(diem >= 3.5){
+            alert("Loại yếu")
+        }else alert("Loại kém")
+    </script>
+</body>
+</html>

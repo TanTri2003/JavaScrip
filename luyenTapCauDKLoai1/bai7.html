@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number1" placeholder="Nhập phí thuê bao">
+    <input type="number" id="number2" placeholder="Nhập số phút gọi">
+    <button onclick="cuocDienThoai()">Cước điện thoại</button>
+    <p id="ketQua"></p>
+    <script>
+        function cuocDienThoai() {
+            let phiThueBao = +document.getElementById("number1").value;
+            let soPhut = +document.getElementById("number2").value;
+            if (soPhut = 1) {
+                document.getElementById('ketQua').innerHTML = `Cước phí điện thoại:  ${phiThueBao + 1000} VNĐ`  ;
+            } else if (soPhut > 50) {
+                document.getElementById('ketQua').innerHTML = `Cước phí điện thoại:  ${phiThueBao + 600} VNĐ`  ;
+            } else if (soPhut > 150) {
+                document.getElementById('ketQua').innerHTML = `Cước phí điện thoại:  ${phiThueBao + 400} VNĐ`  ;
+            } else {
+                document.getElementById('ketQua').innerHTML = `Cước phí điện thoại:  ${phiThueBao + 200} VNĐ`  ;
+            }
+        }
+    </script>
+</body>
+</html>

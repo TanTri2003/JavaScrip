@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let score = +prompt("nhập điểm");
+        // kiểm tra, nếu score >=5 => pass module, nếu score < 5 ko thực hiện j cả
+        // if(score >=5){
+        //     console.log("Pass module");
+        // }else{
+        //     console.log("Fail module");
+        // }
+        // console.log("kết thúc chương trình");
+        // if(score >=8){
+        //     console.log("Giỏi");
+        // }else if(score >=7){
+        //     console.log("khá");
+        // }else if(score >-5){
+        //     console.log("Trung bình");
+        // }else{
+        //     console.log("yếu");
+        // }
+        // if (score >=8) {
+        //     console.log("giỏi");
+        // }
+        // if (score >=7 && score < 8) {
+        //     console.log("khá");
+        // }
+        // if (score >=5 && score <7 ) {
+        //     console.log("trung bình");
+        // }
+
+        // let a = +prompt("Nhập a");
+        // let b = +prompt("Nhập b");
+        // let c = +prompt("Nhập c");
+        // let max = a;
+        // let number = 'a';
+        // if (max < b) {
+        //     max = b;
+        //     number = 'b';
+        // }
+        // if (max < c){
+        //     max = c;
+        //     number = 'c';
+        // }
+        // alert("so lon nhat la: "+number+"="+ max);
+        let month = +prompt("nhập một số");
+        switch (month) {
+            case 1:case 3:case 5:case 7: case 8:case 10: case 12:
+                console.log("tháng có 31 ngày");
+                break;
+            case 2:
+                console.log("tháng có 28 ngày");
+                break;
+            case 4:case 6:case 9:case 11:
+                console.log("tháng có 30 ngày");
+                break;
+            default:
+                    console.log("không phải là tháng trong năm");
+        }
+    </script>
+</body>
+
+</html>

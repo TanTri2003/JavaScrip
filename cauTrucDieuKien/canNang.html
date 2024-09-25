@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="number1" placeholder="Nhập cân nặng">
+    <input type="number" id="number2" placeholder="Nhập chiều cao">
+    <button onclick="chiSoBMI()">BMI</button>
+    <p id="ketQua"></p>
+    <script>
+        function chiSoBMI() {
+            let canNang = +document.getElementById("number1").value;
+            let chieuCao = +document.getElementById("number2").value;
+            let BMI = canNang / (chieuCao * chieuCao);
+            if (BMI < 18.5) {
+                document.getElementById('ketQua').innerHTML = "BMI:" + BMI.toFixed(2) + " Underweight";
+            } else if (BMI < 25) {
+                document.getElementById('ketQua').innerHTML = "BMI:" + BMI.toFixed(2)  + " Normal";
+            } else if (BMI < 30) {
+                document.getElementById('ketQua').innerHTML = "BMI:" + BMI.toFixed(2)  + " Overweight";
+            } else {
+                document.getElementById('ketQua').innerHTML = "BMI:" + BMI.toFixed(2)  + " Obese";
+            }
+        }
+    </script>
+</body>
+
+</html>
