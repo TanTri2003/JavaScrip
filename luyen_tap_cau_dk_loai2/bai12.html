@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="number_b" placeholder="Nhập số tháng">
+    <input type="number" name="" id="number_c" placeholder="Nhập số tiền">
+    <button onclick="tinhTien()">Tính</button>
+    <p id="ketQua"></p>
+    <script>
+        function tinhTien(){
+            let thang = +document.getElementById("number_b").value;
+            let soTienBanDau = +document.getElementById("number_c").value;
+            let tong = soTienBanDau * Math.pow((1+0.006),thang)
+            document.getElementById("ketQua").innerHTML = `Tổng tiền sau khi tính lãi là :${tong.toFixed(3)}`;
+        }
+    </script>
+</body>
+</html>

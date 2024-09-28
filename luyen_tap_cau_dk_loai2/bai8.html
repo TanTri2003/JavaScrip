@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="number_a" placeholder="Nhập tuổi">
+    <button onclick="tuoi()">Tính</button>
+    <p id="ketQua"></p>
+    <script>
+        function tuoi() {
+            let tuoi = +document.getElementById("number_a").value;
+            if (tuoi > 0 && tuoi < 120) {
+                document.getElementById("ketQua").innerHTML = `${tuoi} là số tuổi của một người`;
+            } else {
+                document.getElementById("ketQua").innerHTML = `${tuoi} không phải số tuổi của một người`;
+            }
+        }
+    </script>
+</body>
+
+</html>

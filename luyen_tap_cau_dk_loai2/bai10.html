@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="number_a" placeholder="Nhập bậc thang">
+    <input type="number" name="" id="number_b" placeholder="Nhập số điện">
+    <button onclick="tinhSoDien()">Tính</button>
+    <p id="ketQua"></p>
+    <script>
+        function tinhSoDien(){
+            let bacThang = +document.getElementById("number_a").value;
+            let soDien = +document.getElementById("number_b").value;
+            if(bacThang === 1){
+                let tienDien = 1806 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 1806 * ${soDien} = ${tienDien} VNĐ `
+            }else if(bacThang === 2){
+                let tienDien = 1866 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 1866 * ${soDien} = ${tienDien} VNĐ `
+            }else if(bacThang === 3){
+                let tienDien = 2167 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 2167 * ${soDien} = ${tienDien} VNĐ `
+            }else if(bacThang === 4){
+                let tienDien = 2729 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 2729 * ${soDien} = ${tienDien} VNĐ `
+            }else if(bacThang === 5){
+                let tienDien = 3050 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 3050 * ${soDien} = ${tienDien} VNĐ `
+            }else{
+                let tienDien = 3151 * soDien;
+                document.getElementById("ketQua").innerHTML =`Tiền điện trong tháng là 3151 * ${soDien} = ${tienDien} VNĐ `
+            }
+        }
+    </script>
+</body>
+</html>

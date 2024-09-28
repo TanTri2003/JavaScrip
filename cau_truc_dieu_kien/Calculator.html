@@ -39,7 +39,7 @@
             <td><input type="button" value="4" onclick="layDuLieu(event)"></td>
             <td><input type="button" value="5" onclick="layDuLieu(event)"></td>
             <td><input type="button" value="6" onclick="layDuLieu(event)"></td>
-            <td><input type="button" value="*" onclick="layDuLieu(event)"></td>
+            <td><input type="button" value="x" onclick="layDuLieu(event)"></td>
         </tr>
         <tr>
             <td><input type="button" value="1" onclick="layDuLieu(event)"></td>
@@ -62,7 +62,8 @@
             document.getElementById('phepTinh').value = phepTinh;
         }
         function tinhToan() {
-            let ketQua = eval(phepTinh);
+
+            let ketQua = eval(phepTinh.replace(/x/, '*'));
             phepTinh = ketQua;
             document.getElementById('phepTinh').value = phepTinh;
         }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="number_a" placeholder="Nhập thu nhập">
+    <button onclick="tinhThue()">Tính</button>
+    <p id="ketQua"></p>
+    <script>
+        function tinhThue() {
+            let thuNhap = +document.getElementById("number_a").value;
+            if (thuNhap <= 5000000) {
+                let thue = thuNhap * 0.05;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else if (thuNhap <= 10000000) {
+                let thue = thuNhap * 0.1;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else if (thuNhap <= 18000000) {
+                let thue = thuNhap * 0.15;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else if (thuNhap <= 32000000) {
+                let thue = thuNhap * 0.2;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else if (thuNhap <= 52000000) {
+                let thue = thuNhap * 0.25;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else if (thuNhap <= 80000000) {
+                let thue = thuNhap * 0.3;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            } else {
+                let thue = thuNhap * 0.35;
+                document.getElementById("ketQua").innerHTML = `${thue} là số thuế phải đóng`;
+            }
+        }
+    </script>
+</body>
+
+</html>

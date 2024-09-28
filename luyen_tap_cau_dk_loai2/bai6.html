@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="number_a" placeholder="Nhập a">
+    <input type="number" name="" id="number_b" placeholder="Nhập a">
+    <button onclick="phuongTrinhBacNhat()">Tính</button>
+    <p id="ketQua"></p>
+    <script>
+        function phuongTrinhBacNhat() {
+            let a = +document.getElementById("number_a").value;
+            let b = +document.getElementById("number_b").value;
+
+            if(a===0){
+                if(b===0){
+                    document.getElementById("ketQua").innerHTML = "Phương trình vô số nghiệm";
+                }else{
+                    document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+                }
+            }else{
+                let x = -b/a;
+                document.getElementById("ketQua").innerHTML = `Phương trình có nghiệm x = ${x}`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
