@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let soLuong = +prompt("Nhập số lượng số nguyên tố cần in ra: ");
+        let dem = 0;
+        let N = 2;
+        while (dem < soLuong) {
+            let laSoNguyenTo = true;
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    laSoNguyenTo = false;
+                    break;// nếu ko phải là snt thì dừng
+                }
+            }
+            if (laSoNguyenTo == true) { // có nghĩa là só nguyên tố bằng true thì in ra laSoNguyenTo == true
+                document.write(N + " ");
+                dem++; // tăng đếm khi nó là snt
+            }
+            N++; // tăng n để kiểm tra các số tt
+        }
+    </script>
+</body>
+
+</html>

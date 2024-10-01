@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let table
+        table = "<table border='2'>"
+        for (let i = 2; i<=10; i++){
+            table += "<tr>"     // tạo một hàng mới
+            for (let j =1; j<=10; j++){
+                 // tạo td (cột) căn giữa i chạy từ 2 -> 10 j 1->10  tạo phép tính, kết quả
+                table += "<td align='center'>"+i+"*"+j+" = "+ (i*j)+"</td>"
+            }
+            table += "</tr>"
+        } 
+        table += "</table>"
+        document.write(table)
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="bai_8()">Đoán số</button>
+    <script>
+        function bai_8() {
+            let phamVi = +prompt(`Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu ? `);
+            let ranDom = Math.floor(Math.random() * (phamVi + 1));
+            let soLanThu = 0;
+            while (soLanThu < 3) {
+                nhapSo = +prompt("Nhập số bạn muốn đoán");
+                soLanThu++;
+                if (nhapSo === ranDom) {
+                    alert(`Chúc mừng! Bạn đã đoán đúng số ${ranDom} sau ${soLanThu} lần thử.`);
+                } else if (nhapSo < ranDom) {
+                    alert("Số bạn đoán nhỏ hơn số ngẫu nhiên.");
+                } else {
+                    alert("Số bạn đoán lớn hơn số ngẫu nhiên.");
+                }
+            } alert("Con gà cho nhập 3 lần còn không đúng");
+        }
+
+    </script>
+</body>
+
+</html>
