@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tong =0,dem=0;;
+        let daySo="";
+        let i=1;
+        while (true) {
+            if(i%7==0){
+                daySo=i;
+                console.log(daySo);
+                dem++;
+                if(dem==30){
+                    break;
+                }
+                tong +=i;
+            }i++;
+        }console.log("tong = "+tong);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Dùng for khi biết trc số lần lặp (kiểm tra đk trước khi lặp)
+    Dùng while khi không biết số lần lặp (kiểm tra đk trước khi lặp)
+    Dùng do-while khi nhập vào một số từ bàn phím (kiểm tra đk sau khi lặp)
+    + kiểm tra số đó: nếu số đó < 0 thì nhập lại, > 0 thì hiển thị thông báo số vừa nhập  -->
+
+    <script>
+        let n;
+        do {
+            n = +prompt("Nhập n");
+        } while (n<0);
+        alert("Số vừa nhập là : "+n);
+    </script>
+</body>
+</html>
