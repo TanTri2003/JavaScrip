@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 5;
+        for (let i = 1; i <= n; i++) {
+            document.write('*'.repeat(i) + '<br>'); // khi i=1 sẽ tạo 1 * repeat lúc đó nó sẽ là 1 nên tạo 1 *,
+            // sau khi xuống dòng là br i tăng lên 2 tạo * repeat lúc này 2 nên được **
+        }
+
+        document.write("<br>");
+        for (let i = n; i <= n; i--) {
+            document.write('*'.repeat(i) + '<br>');
+        }
+
+    </script>
+    <script>
+        for (let i = 1; i <= n; i++) {
+            document.write('&ensp;'.repeat(n - i) + '*'.repeat(i) + '<br>'); // &ensp sẽ in khoảng trắng và khoảng
+            // trắng tùy thuộc vào repeat(5-1) nó sẽ in ra 4 khoảng trắng và sau đó cộng với 1* khi i nó bằng 1
+        }
+    </script>
+    <script>
+        document.write("<br>");
+        for (let i = 5; i >= 1; i--) {
+            document.write('&ensp;'.repeat(n - i) + '*'.repeat(i) + '<br>');
+        }
+    </script>
+</body>
+
+</html>

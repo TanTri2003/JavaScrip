@@ -19,12 +19,16 @@
                 soLanThu++;
                 if (nhapSo === ranDom) {
                     alert(`Chúc mừng! Bạn đã đoán đúng số ${ranDom} sau ${soLanThu} lần thử.`);
+                    break;
                 } else if (nhapSo < ranDom) {
                     alert("Số bạn đoán nhỏ hơn số ngẫu nhiên.");
                 } else {
                     alert("Số bạn đoán lớn hơn số ngẫu nhiên.");
                 }
-            } alert("Con gà cho nhập 3 lần còn không đúng");
+                if (soLanThu == 3) {
+                    alert("Con gà cho nhập 3 lần còn không đúng");
+                }
+            }
         }
 
     </script>
