@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Nhập từ: </span>
+    <input type="text" id="nhapTu">
+    <button onclick="dichNghia()">Dịch</button>
+    <p id="ketQua"></p>
+    <script>
+        let tiengAnh = ["apple","banana"];
+        let tiengViet = ["táo","chuối"];
+
+        function dichNghia(){
+            let tuNhap = document.getElementById("nhapTu").value;
+            let viTri = false;
+            for(let i=0;i<tiengAnh.length;i++){
+                if(tiengAnh[i] == tuNhap){
+                    document.getElementById("ketQua").innerHTML= `${tuNhap} có nghĩa là :` + tiengViet[i];
+                    viTri= true;
+                    break;
+                }
+            }
+            if(!viTri){
+                document.getElementById("ketQua").innerHTML="không tìm thấy";
+            }
+        }
+    </script>
+</body>
+</html>
