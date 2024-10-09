@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ngoiSao = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let nameNgoiSao = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        function translate(str){
+            let indexInNgoiSao = ngoiSao.indexOf(str);
+            if(indexInNgoiSao ===-1){
+                return " không tìm thấy ";
+            }else{
+                let result = nameNgoiSao[indexInNgoiSao];
+                return result;
+            }
+        }
+        let string = prompt("Nhập ngôi sao");
+        let ketQua =  translate(string);
+        alert(ketQua);
+    </script>
+</body>
+</html>

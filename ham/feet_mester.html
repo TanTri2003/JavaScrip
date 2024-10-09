@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function feetToMester(feet) {
+            return feet *0.305;
+        }
+        function mesterToFeet(mester) {
+            return mester*3.279;
+        }
+        let numberFeet = +prompt("vui lòng nhập feet");
+        let numberMester=+prompt("vui lòng nhập mester");
+        document.write(`${numberFeet} feet sẽ bằng `+feetToMester(numberFeet)+`mester<br>`);
+        document.write(`${numberMester} mester sẽ bằng `+mesterToFeet(numberMester)+`feet`);
+        
+    </script>
+</body>
+
+</html>
