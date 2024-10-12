@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" placeholder="Enter name">
+    <button onclick=""></button>
+    <div id="result"></div>
+    <script>
+        // CRUD: 4 chức năng một trình viên web phải làm được
+        // C: create: thêm mới, R: read: đọc(hiển thị danh sách)
+        // U: update: chỉnh sửa D: delete 
+        let studentList = ["Võ Tấn Trí", "Nokia", "Iphone"];
+        display(studentList, "result1");
+        function addNewStudent(){
+            let newStudent = document.getElementById("name").value;
+            studentList.push(newStudent);
+            display(studentList);
+            
+        }
+        function display(list) {
+            let tableString = `<table border="1" style="border-collapse: collapse;">
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                             </tr>`;
+            for (let i = 0; i < list.length; i++) {
+                tableString += ` <tr>
+                                <td>${i + 1}</td>
+                                <td>${list[i]}</td>
+                                <td><button>Edit</button></td>
+                                <td><button>Detele</button></td>
+                             </tr>`;
+            }
+            document.getElementById(positionDisplay).innerHTML = tableString;
+        }
+    </script>
+</body>
+
+</html>

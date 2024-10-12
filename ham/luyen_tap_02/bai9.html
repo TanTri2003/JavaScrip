@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTra(arr, char) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === char) {
+                    count++;
+                }
+            }
+            if (count > 0) {
+                return count;
+            } else {
+                return -1;
+            }
+        }
+        let arr = ['a', 'b', 'c', 'a', 'd', 'e'];
+        let char = prompt("Nhập một ký tự cần kiểm tra:");
+        let result = kiemTra(arr, char)
+        if (result !== -1) {
+            document.write(`Ký tự '${char}' xuất hiện ${result} lần trong mảng.`);
+        } else {
+            document.write(`Ký tự '${char}' không có trong mảng.`);
+        }
+    </script>
+</body>
+
+</html>

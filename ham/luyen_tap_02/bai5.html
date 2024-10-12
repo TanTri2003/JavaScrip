@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function soSanh(a, b, c) {
+            let max = a;
+            if (max < b) {
+                max = b;
+            }
+            if (max < c) {
+                max = c;
+            }
+            return max;
+        }
+        let a = +prompt("Nhập a");
+        let b = +prompt("Nhập b");
+        let c = +prompt("Nhập c");
+        let result = soSanh(a,b,c);
+        document.write(`Số lớn nhất là: ${result}`)
+    </script>
+</body>
+
+</html>
