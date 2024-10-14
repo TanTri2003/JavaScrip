@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Rectangle {
+            constructor(a,b) {
+                this.a = a;
+                this.b = b;
+            }
+            getS() {
+                return this.a*this.b;
+            }
+            getP(){
+                return 2*(this.a+this.b);
+            }
+        }
+        let chuNhat = new Rectangle(10,20);
+        console.log("Diện tích hình chữ nhật : "+chuNhat.getS());
+        console.log("Chu vi hình chữ nhật : "+chuNhat.getP());
+    </script>
+</body>
+
+</html>

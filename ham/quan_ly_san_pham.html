@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h2>Quản lý sản phẩm</h2>
+    <div>
+        <input type="text" placeholder="New product" id="newProduct">
+        <button onclick="addProduct()">Add</button>
+    </div>
+    <h2>Display all product</h2>
+    <table border="1">
+        <tr>
+            <td>Product Name</td>
+            <td colspan="2">Action</td>
+        </tr>
+        <tbody id="listProduct">
+        </tbody>
+    </table>
+    <br>
+    <div id="formEdit">
+
+    </div>
+    <script>
+        // bước 1: giao diện
+        // bước 2: Xây dựng các chức năng
+        // bước 3: làm chức năng thì xây dựng các hàm tương ứng
+        let listProduct = ["Sony", "Redmi", "Iphone"];
+        fillAll();
+        function fillAll() {  // in danh sách
+            let stringProduct = ''; // tạo chuỗi
+            for (let i = 0; i < listProduct.length; i++) { // chạy vòng lặp list mỗi vòng cho stringProduct bằng hàng ngang để mỗi vòng thì tạo thêm 1
+                stringProduct += `            
+                <tr>
+                    <td>${listProduct[i]}</td>
+                    <td><button onclick="showFromEdit(${i})">Edit</button></td>
+                    <td><button onclick="remove(${i})">Delete</button></td>  
+                </tr>`
+            }// tạo đối số i để bik vị trí xóa 0,1,2...
+            document.getElementById('listProduct').innerHTML = stringProduct;
+        }
+
+        function addProduct() {
+            let productAdd = document.getElementById('newProduct').value; // tạo biến để hứng ô input
+            listProduct.push(productAdd);
+            fillAll(); // gọi fillall để cập nhật lại sao khi thêm
+        }
+
+        function remove(index) { // tham số index
+            listProduct.splice(index, 1); // xóa tại vị trí của đối số và xóa đi 1 phần tử
+            fillAll();
+        }
+
+        function showFromEdit(index) {
+            let productEdit = listProduct[index]; // bắt sản phẩm từ vị trí
+            document.getElementById('formEdit').innerHTML = `
+            <input type="text" id="edit" value="${productEdit}">
+            <button onclick="editProduct(${index})">Save</button>
+            `
+        }
+        function editProduct(index) {
+            let newProductEdit = document.getElementById("edit").value;
+            listProduct[index] = newProductEdit;
+            document.getElementById("formEdit").innerHTML = '';
+            fillAll();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let student1 = { // khởi tạo đối tượng trực tiếp
+        //     id: 1,
+        //     name: "Trí",
+        //     age: 21,
+        //     study: function (subject) {
+        //         console.log(`${this.name} Học viên đang học môn :  ${subject}`);
+        //     }
+        // }
+        // console.log("Tên học viên là :" + student1.name);
+        // student1.name = "Bình";
+        // console.log("Tên học viên là :" + student1.name);
+        // student1.study("Toán");
+        // có khuôn mẫu nào để tạo ra đối tượng class
+        // cách 1
+        // let student = function (id, name, age) {
+        //     this.id = id;
+        //     this.name = name;
+        //     this.age = age;
+        //     this.study = function (subject) {
+        //         console.log(`${this.name} Học viên đang học môn :  ${subject}`);
+        //     }
+        // }
+        // Cách 2 tạo class sinh viên bằng từ khóa class của ES6 => js 2015
+        class sinhVien {
+            constructor(id, name, age) { // hàm || method nhưng đặc biệt => sử dụng để khởi tạo đối tượng
+                this.id = id;
+                this.name = name;
+                this.age = age;
+            }
+            study(subject){
+                console.log(`${this.name} Học viên đang học môn :  ${subject}`);
+            }
+        }
+        let sv1 = new sinhVien(10,"Trí",21);
+        sv1.study("Hóa");
+        
+        // tạo một đối tượng sinh viên từ 1 lớp student
+        // let student2 = new student(2, "Trí", 21);
+        // student2.study("Văn");
+        // let student3 = new student(3, "Bình", 21);
+        // student3.name = "Võ Tấn Trí";
+        // console.log(student3.name);
+
+    </script>
+</body>
+
+</html>
