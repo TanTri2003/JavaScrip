@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Fruit {
+            constructor(weight) {
+                this.weight = weight;
+            }
+        }
+        class Apple extends Fruit {
+            constructor(weight) {
+                super(weight);
+            }
+            decrease() {
+                if (this.weight > 0) {
+                    this.weight--;
+                }
+            }
+            isEmpty() {
+                return this.weight === 0;
+            }
+            getWeight() {
+                return this.weight;
+            }
+        }
+        class Human {
+            constructor(name, gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            say(words) {
+                console.log("Tôi là táo. Khối lượng hiện tại của tôi là " + this.weight);
+            }
+            checkApple(apple) {
+                if (apple.isEmpty()) {
+                    this.say("Táo đã hết");
+                } else {
+                    this.say("Táo còn " + apple.getWeight() + " đơn vị khối lượng.");
+                }
+            }
+            eatApple(apple) {
+                if (!apple.isEmpty()) {
+                    this.say("Ăn một miếng táo");
+                    apple.decrease();
+                    this.weight++;
+                } else {
+                    this.say("Không có táo để ăn!");
+                }
+            }
+            getName() {
+                return this.name;
+            }
+            getWeight() {
+                return this.weight;
+            }
+        }
+        let apple = new Apple(10);
+        let human = new Human("Trí", true, 80);
+        human.checkApple(apple);
+        while (!apple.isEmpty()) {
+            human.eatApple(apple);
+            human.checkApple(apple);
+        }
+        console.log("Khối lượng" + human.getWeight());
+    </script>
+</body>
+
+</html>

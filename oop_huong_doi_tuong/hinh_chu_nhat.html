@@ -8,11 +8,24 @@
 </head>
 
 <body>
+    <canvas id="canvas1" width="500" height="400" style="border: 1px solid red"></canvas>
     <script>
         class Rectangle {
             constructor(a,b) {
                 this.a = a;
                 this.b = b;
+            }
+            setA(a){
+                this.a=a;
+            }
+            getA(){
+                return this.a;
+            }
+            setB(b){
+                this.b=b;
+            }
+            getB(){
+                return this.b;
             }
             getS() {
                 return this.a*this.b;
@@ -20,10 +33,23 @@
             getP(){
                 return 2*(this.a+this.b);
             }
+            draw(x,y,coler){
+                let canvas = document.getElementById("canvas1");
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle=coler;
+                ctx.fillRect(x,y,this.a,this.b);
+                // ctx.rect(0,0,this.a,this.b);
+                // ctx.stroke();
+            }
         }
         let chuNhat = new Rectangle(10,20);
+        chuNhat.setA(200);
+        chuNhat.setB(100);
         console.log("Diện tích hình chữ nhật : "+chuNhat.getS());
         console.log("Chu vi hình chữ nhật : "+chuNhat.getP());
+        chuNhat.draw(0,0,"red");
+        let chuNhat2 = new Rectangle(300,200);
+        chuNhat2.draw(10,200,"blue");
     </script>
 </body>
 

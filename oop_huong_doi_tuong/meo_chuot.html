@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+            }
+            // không biết kêu thế nào => tính trừu tượng
+            say() {
+                console.log("tiếng kêu chưa cụ thể");
+
+            }
+        }
+        class Rat extends Animal {
+            constructor(name, weight, speed, status) {
+                super(name, weight, speed);
+                this.status = status;
+            }
+            // thể hiện tính đa hình
+            say(text) {
+                console.log("chít chít "+text);
+            }
+        }
+        class Cat extends Animal {
+            constructor(name, weight, speed) {
+                super(name, weight, speed);
+            }
+            say(text) {
+                console.log("meo meo! "+text);
+            }
+            eatMouse(mouse) {
+                if (mouse.status === true) {
+                    this.say("còn sống ăn thôi")
+                    this.weight += mouse.weight;
+                }else{
+                    this.say("chết rồi không ăn");
+                }
+            }
+            catchMouse(mouse){
+                if(this.speed>mouse.speed){
+                    this.say("bắt được rồi");
+                    mouse.say("chết em rồi");
+                    this.eatMouse(mouse);
+                }else{
+                    mouse.say("đố bắt được em hehehehehe");
+                    this.say("tha cho mày đó");
+                }
+            }
+        }
+        let jerry = new Rat("Jerry1",1,5,true);
+        let tom = new Cat("Tom1",10,10);
+        tom.catchMouse(jerry);
+        console.log("Khối lượng của tom: "+tom.weight);
+        
+    </script>
+</body>
+
+</html>
