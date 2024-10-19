@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" oninput="addStudent()" id="email" placeholder="Enter email"><br>
+    <small id="errorEmail" style="color: red;"></small> <br>
+    <button>Send</button>
+    <script>
+        // email: tối đa 10 ký tự và bắt đầu từ chữ số
+        // độ dài ngắn nhất 6 ký tự, dài 15 kí tự
+        // có @
+        function addStudent() {
+            let email = document.getElementById("email").value;
+            let regex = /^[a-zA-Z][\w]{5,14}@[a-z]{2,7}\.[a-z]{2,7}$/;
+            let check = regex.test(email);
+            if(!check){
+                document.getElementById("errorEmail").innerHTML = " khong dung dinh dang";
+            }else{
+                document.getElementById("errorEmail").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

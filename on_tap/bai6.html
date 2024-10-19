@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTra(arr) {
+            let chan = true;
+            let le = true;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    le = false;
+                } else {
+                    chan = false;
+                }
+            }
+            if (chan) return 1;
+            if (le) return 0;
+            return -1;
+        }
+        console.log(kiemTra([0, 2, 8, 12, 4]));
+        console.log(kiemTra([1,7,3,11]));
+        console.log(kiemTra([1,2,9,4]));
+    </script>
+
+</body>
+
+</html>

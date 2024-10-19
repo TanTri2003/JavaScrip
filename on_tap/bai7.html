@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTraMangKyTu(arr) {
+            let chiSo = true;
+            let chiChu = true;
+            for (let i = 0; i < arr.length; i++) {
+                let kyTu = arr[i];
+                if (/^\d$/.test(kyTu)) {  
+                    chiChu = false;      
+                }
+                else if (/^[a-zA-Z]$/.test(kyTu)) { 
+                    chiSo = false;        
+                }
+                else {
+                    return -1;       
+                }
+            }
+            if (chiSo) return 1;  
+            if (chiChu) return 0; 
+            return -1;            
+        }
+        console.log(kiemTraMangKyTu([5,2,8,1,4]));
+        console.log(kiemTraMangKyTu(['a','b','r','c']));
+        console.log(kiemTraMangKyTu([1,'b','r',3]));
+    </script>
+</body>
+
+</html>

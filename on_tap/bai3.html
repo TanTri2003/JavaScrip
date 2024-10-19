@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let n;
+        do {
+            n = +prompt("nhập vào độ dài của mảng");
+        } while (n <= 0 || n > 20)
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            let element = +prompt("nhập phần tử thứ " + i);
+            array.push(element);
+        }
+        alert("mảng vừa nhập là: " + array);
+        let kiemTra = true;
+
+        for (let i = 0; i < array.length/2; i++) {
+            if (array[i] != array[array.length-1-i]) { //array[i=0] khác với array.length-1-i là vị trí cuối với array[i=vị trí cuối]
+                kiemTra = false;
+                break;
+            }
+        }
+        if (kiemTra) {
+            alert("OK");
+        } else {
+            alert("NO");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkTriangle(x, y, z) {
+            if (x + y > z && x + z > y && y + z > x) { // kiểm tra có phải là tam giác hay ko
+                let a = x * x;  // gán a,b,c để kiểm tra tam giác vuông
+                let b = y * y;
+                let c = z * z;
+                if (a + b === c || a + c === b || b + c === a) {
+                    console.log("Là 3 cạnh của 1 tam giác vuông");
+                } else {
+                    console.log("Chỉ là 3 cạnh của một tam giác");
+                }
+            } else {
+                console.log("Không phải là cạnh của 1 tam giác");
+            }
+        }
+        checkTriangle(-3, 5, 7);
+        checkTriangle(1, 2, 3);
+        checkTriangle(3,4,5);
+        checkTriangle(4,12,10);
+    </script>
+</body>
+
+</html>

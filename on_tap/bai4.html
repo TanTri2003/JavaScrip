@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function find(x) {
+            let regex = /^(\d+)\/(\d+)$/;
+            let match = x.match(regex);
+
+            if (!match) {
+                console.log("Không phải là phân số");
+                return;
+            }
+            let tuSo = parseInt(match[1]);
+            let mauSo = parseInt(match[2]);
+            if (mauSo === 0) {
+                console.log("Không phải là phân số hợp lệ");
+                return;
+            }
+            if(tuSo===0){
+                console.log("Phân số tối giản:"+tuSo);
+            }
+            function ucln(a, b) {
+                while (b !== 0) {
+                    let temp = b;
+                    b = a % b;
+                    a = temp;
+                }
+                return a;
+            }
+            let uocChungLonNhat = ucln(tuSo, mauSo);
+            let tuSoRutGon = tuSo / uocChungLonNhat;
+            let mauSoRutGon = mauSo / uocChungLonNhat;
+            console.log(`Phân số tối giản: ${tuSoRutGon}/${mauSoRutGon}`);
+        }
+        find("123/");
+        find("12/a11");
+        find("1/0");
+        find("0/1");
+        find("1/2");
+        find("12/48");
+
+    </script>
+</body>
+
+</html>
