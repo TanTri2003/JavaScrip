@@ -10,6 +10,9 @@
 <body>
     <script>
         function kiemTra(arr) {
+            if(arr.length===0){
+                return -1;
+            }
             let chan = true;
             let le = true;
             for (let i = 0; i < arr.length; i++) {
@@ -26,6 +29,7 @@
         console.log(kiemTra([0, 2, 8, 12, 4]));
         console.log(kiemTra([1,7,3,11]));
         console.log(kiemTra([1,2,9,4]));
+        console.log(kiemTra([]));
     </script>
 
 </body>

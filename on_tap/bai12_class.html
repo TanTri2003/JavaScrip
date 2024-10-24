@@ -5,35 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <style>
-        td {
-            text-align: center;
-            vertical-align: middle;
-            width: calc(100% / 5);
-        }
-
-        button {
-            background-color: pink;
-            text-align: center;
-            display: inline-block;
-            font-size: 20px;
-            margin: 4px 20px;
-            border: none;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-
-        }
-
-        button:hover {
-            background-color: rgb(179, 179, 246);
-        }
-    </style>
+    <style></style>
 </head>
 
 <body>
@@ -57,22 +29,32 @@
         </tbody>
     </table>
     <script>
-        let listStudent = [{
-            ma: "HV-0001", name: "Võ Tấn Trí", class: "C0724L1-wf101", email: "votantri2006@gmail.com", birthday: "20-06-2024", module: "1"
-        }];
+        class Student {
+            constructor(ma, name, studentClass, email, birthday, module) {
+                this.ma = ma;
+                this.name = name;
+                this.studentClass = studentClass;
+                this.email = email;
+                this.birthday = birthday;
+                this.module = module;
+            }
+        }
+        let listStudent = [
+            new Student("HV-0001", "Võ Tấn Trí", "C0724L1-wf101", "votantri2006@gmail.com", "20/06/2024", "1"),
+        ];
         fillAll();
         function fillAll() {
             let stringStudent = '';
             for (let i = 0; i < listStudent.length; i++) {
                 stringStudent += `            
-                <tr>
-                    <td>${listStudent[i].ma}</td>
-                    <td>${listStudent[i].name}</td>
-                    <td>${listStudent[i].class}</td>
-                    <td>${listStudent[i].email}</td>
-                    <td>${listStudent[i].birthday}</td>
-                    <td>${listStudent[i].module}</td>
-                </tr>`;
+        <tr>
+            <td>${listStudent[i].ma}</td>
+            <td>${listStudent[i].name}</td>
+            <td>${listStudent[i].studentClass}</td>
+            <td>${listStudent[i].email}</td>
+            <td>${listStudent[i].birthday}</td>
+            <td>${listStudent[i].module}</td>
+        </tr>`;
             }
             document.getElementById('listStudent').innerHTML = stringStudent;
         }
@@ -82,7 +64,7 @@
             do {
                 newMa = prompt("Nhập mã học viên mới với định dạng (HV-XXXX)");
                 if (maRegex.test(newMa) === false) {
-                    alert("Mã không hợp lệ định dạng sai hãy nhập lại theo HV-XXXX ( với XXXX là 4 chữ số )")
+                    alert("Mã không hợp lệ, định dạng sai. Hãy nhập lại theo HV-XXXX (với XXXX là 4 chữ số)");
                 } else if (listStudent.some(student => student.ma === newMa)) {
                     alert("Mã học viên này đã tồn tại. Vui lòng nhập mã khác.");
                 }
@@ -92,68 +74,68 @@
             let nameRegex = /^[\p{L}\s]{1,50}$/u;
             do {
                 newName = prompt("Nhập tên học viên mới").trim();
-                console.log(newName);
                 if (!nameRegex.test(newName)) {
-                    alert("Tên quá kí tự hãy nhập từ 1 đến 50 ký tự")
+                    alert("Tên không hợp lệ. Hãy nhập từ 1 đến 50 ký tự.");
                 }
             } while (!nameRegex.test(newName));
+
             let newClass = prompt("Nhập lớp cho học viên");
             let newEmail = prompt("Nhập email của học viên");
             let newBirthday;
             let birthdayRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
             do {
-                newBirthday = prompt("Nhập ngày tháng năm sinh");
+                newBirthday = prompt("Nhập ngày tháng năm sinh (dd/mm/yyyy)");
                 if (!birthdayRegex.test(newBirthday)) {
                     alert("Hãy nhập lại với định dạng dd/mm/yyyy");
                 }
             } while (!birthdayRegex.test(newBirthday));
+
             let newModule;
             let moduleRegex = /^[1-6]$/;
             do {
-                newModule = prompt("Nhập module cho học viên");
-                if (moduleRegex.test(newModule) === false) {
+                newModule = prompt("Nhập module cho học viên (1-6)");
+                if (!moduleRegex.test(newModule)) {
                     alert("Hãy nhập lại từ 1 đến 6");
                 }
             } while (!moduleRegex.test(newModule));
-            listStudent.push({ ma: newMa, name: newName, class: newClass, email: newEmail, birthday: newBirthday, module: newModule });
+
+            listStudent.push(new Student(newMa, newName, newClass, newEmail, newBirthday, newModule));
             fillAll();
         }
         function editStudent() {
             let newEditStudent;
             do {
                 newEditStudent = prompt("Nhập mã học viên cần sửa");
-                let student = listStudent.find(student => student.ma === newEditStudent)
+                let student = listStudent.find(student => student.ma === newEditStudent);
                 if (student) {
                     student.name = prompt("Nhập tên mới:", student.name) || student.name;
-                    student.class = prompt("Nhập lớp mới:", student.class) || student.class;
+                    student.studentClass = prompt("Nhập lớp mới:", student.studentClass) || student.studentClass;
                     student.email = prompt("Nhập email mới:", student.email) || student.email;
                     student.birthday = prompt("Nhập ngày sinh mới (dd-mm-yyyy):", student.birthday) || student.birthday;
                     student.module = prompt("Nhập module mới:", student.module) || student.module;
-                    // || không nhập nội dụng để sửa thì nó sẽ giữ nguyên cái cũ
                     fillAll();
                     return;
                 } else {
-                    alert("Mã học viên không tồn tại. Vui lòng nhập lại");
+                    alert("Mã học viên không tồn tại. Vui lòng nhập lại.");
                 }
             } while (true);
-
         }
-        function remove(ma) {
+        function remove() {
             let newRemove;
             do {
                 newRemove = prompt("Nhập mã học viên cần xóa:");
-                let student = listStudent.find(student => student.ma === newRemove)
-                //listStudent là mảng chứa thông tin sinh viên .find là tìm kiếm (student(có thể ghi bất kì từ nào cx đc) 
+                let index = listStudent.findIndex(student => student.ma === newRemove);
+                //listStudent là mảng chứa thông tin sinh viên .findIndex là trả lại vị trí cần tìm (student(có thể ghi bất kì từ nào cx đc) 
                 //đại diện cho từng phần tử trong mảng
                 // student.ma là chỉ thuộc tính mã của sinh viên và so sánh với newRemove mình nhập có đúng hay không)
-                if(student){
-                    listStudent.splice(newRemove, 1);// xóa theo mã
+                if (index) {
+                    listStudent.splice(index, 1);
                     fillAll();
                     return;
-                }else{
-                    alert("Mã học viên không tồn tại. Vui lòng nhập lại");
+                } else {
+                    alert("Mã học viên không tồn tại. Vui lòng nhập lại.");
                 }
-            } while (condition);
+            } while (true);
         }
     </script>
 </body>
