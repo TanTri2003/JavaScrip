@@ -125,6 +125,7 @@
             do {
                 newRemove = prompt("Nhập mã học viên cần xóa:");
                 let index = listStudent.findIndex(student => student.ma === newRemove);
+                // sử dụng callback 
                 //listStudent là mảng chứa thông tin sinh viên .findIndex là trả lại vị trí cần tìm (student(có thể ghi bất kì từ nào cx đc) 
                 //đại diện cho từng phần tử trong mảng
                 // student.ma là chỉ thuộc tính mã của sinh viên và so sánh với newRemove mình nhập có đúng hay không)
@@ -137,6 +138,13 @@
                 }
             } while (true);
         }
+        // trừ cách callback ta dùng for
+        // for (let i = 0; i < listStudent.length; i++) {
+        //     if (listStudent[i].ma === newEditStudent) {
+        //         student = listStudent[i];
+        //         break;
+        //     }
+        // }
     </script>
 </body>
 

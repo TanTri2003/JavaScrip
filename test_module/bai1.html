@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n;
+        do {
+            n = +prompt("nhập vào độ dài của mảng");
+        } while (n <= 0 || n > 50)
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            let element = +prompt("nhập phần tử thứ " + i);
+            array.push(element);
+        }
+        let tongChan = 0;
+        let tongLe = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (i % 2 === 0) {
+                tongChan += array[i];
+            } else {
+                tongLe += array[i];
+            }
+        }
+        document.write("mảng vừa nhập là: " + array + `<br>`);
+        document.write("Kết quả = " + (tongChan - tongLe));
+    </script>
+</body>
+
+</html>

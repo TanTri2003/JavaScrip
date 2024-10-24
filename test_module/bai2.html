@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check(str) {
+            let hoa=0;
+            let thuong=0;
+            for(let i=0;i<str.length;i++){
+                let kiTu = str[i];
+                if(/^[A-Z]$/.test(kiTu)){
+                    hoa++;
+                }else if(/^[a-z]$/.test(kiTu)){
+                    thuong++;
+                }
+            }
+            return [hoa,thuong];
+        }
+        let chuoi =check("HellOCodeym");
+        document.write(chuoi);
+        document.write("<br>");
+        let chuoi2 = check("");
+        document.write(chuoi2);
+    </script>
+</body>
+</html>

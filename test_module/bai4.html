@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: center;
+            vertical-align: middle;
+            width: calc(100% / 6);
+        }
+
+        button {
+            background-color: pink;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 20px;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+
+        }
+
+        button:hover {
+            background-color: rgb(179, 179, 246);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quản lý máy tính</h1>
+    <div>
+        <button onclick="addComputer()">Thêm mới máy tính</button>
+    </div>
+    <br>
+    <table border="1" style=" border-collapse:collapse;">
+        <tr>
+            <th>Mã máy</th>
+            <th>Tên máy</th>
+            <th>Tên hãng sản xuất</th>
+            <th>Giá bán</th>
+        </tr>
+        <tbody id="listComputer">
+        </tbody>
+    </table>
+    <script>
+        class computer {
+            constructor(ma, tenMay, tenHang, gia) {
+                this.ma = ma;
+                this.tenMay = tenMay;
+                this.tenHang = tenHang;
+                this.gia = gia;
+            }
+            getMa() {
+                return this.ma;
+            }
+            setMa(ma) {
+                this.ma = ma;
+            }
+            getTenMay() {
+                return this.tenMay;
+            }
+            setTenMay(tenMay) {
+                this.TenMay = TenMay;
+            }
+            getTenHang() {
+                return this.tenHang;
+            }
+            setTenHang(tenHang) {
+                this.tenHang = tenHang;
+            }
+            getGia() {
+                return this.gia;
+            }
+            setGia(gia) {
+                if (typeof gia === 'number') {
+                    this.gia = gia;
+                } else {
+                    throw new Error("Giá bán phải là kiểu number");
+                }
+            }
+            toString() {
+                return `Mã: ${this.ma}, Tên Máy: ${this.tenMay}, Tên hãng sản xuất: ${this.tenHang}, Giá bán: ${this.gia} VND`;
+            }
+        }
+        let listComputer = [
+            new computer("0001", "MSI GF63", "MSI", 20000000)
+        ];
+        fillAll();
+        function fillAll() {
+            let stringComputer = '';
+            for (let i = 0; i < listComputer.length; i++) {
+                stringComputer += `            
+        <tr>
+            <td>${listComputer[i].ma}</td>
+            <td>${listComputer[i].tenMay}</td>
+            <td>${listComputer[i].tenHang}</td>
+            <td>${listComputer[i].gia}</td>
+        </tr>`;
+            }
+            document.getElementById('listComputer').innerHTML = stringComputer;
+        }
+        function addComputer() {
+            let newMa = prompt("Vui lòng nhập mã máy tính ");
+            let newTenMay = prompt("Vui lòng nhập tên máy");
+            let newTenHang = prompt("Vui lòng nhập tên hãng máy tính");
+            let newGia;
+            let regexGia = /^\d+$/;
+            do {
+                newGia = prompt("Vui lòng nhập giá máy tính");
+                if(!regexGia.test(newGia)){
+                    alert("Hãy nhập lại với định dạng number number");
+                }
+            } while (!regexGia.test(newGia));
+            listComputer.push(new computer(newMa, newTenMay, newTenHang, newGia));
+            fillAll();
+        }
+    </script>
+</body>
+
+</html>
