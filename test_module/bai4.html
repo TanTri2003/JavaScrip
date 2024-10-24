@@ -34,6 +34,7 @@
     <h1>Quản lý máy tính</h1>
     <div>
         <button onclick="addComputer()">Thêm mới máy tính</button>
+        <button onclick="sortGia()" style="margin-left: 400px">Sắp xếp</button>
     </div>
     <br>
     <table border="1" style=" border-collapse:collapse;">
@@ -87,7 +88,8 @@
             }
         }
         let listComputer = [
-            new computer("0001", "MSI GF63", "MSI", 20000000)
+            new computer("0001", "MSI GF63", "MSI", 20000000),
+            new computer("0002", "MSI GF63", "MSI", 18000000)
         ];
         fillAll();
         function fillAll() {
@@ -116,9 +118,12 @@
                 }
             } while (!regexGia.test(newGia));
             listComputer.push(new computer(newMa, newTenMay, newTenHang, newGia));
-            listComputer.sort((a, b) => a.gia - b.gia);
             fillAll();
         }
+        function sortGia() {
+            listComputer.sort((a, b) => a.gia - b.gia);
+            fillAll();
+        } 
     </script>
 </body>
 
