@@ -111,11 +111,12 @@
             let regexGia = /^\d+$/;
             do {
                 newGia = prompt("Vui lòng nhập giá máy tính");
-                if(!regexGia.test(newGia)){
+                if (!regexGia.test(newGia)) {
                     alert("Hãy nhập lại với định dạng number number");
                 }
             } while (!regexGia.test(newGia));
             listComputer.push(new computer(newMa, newTenMay, newTenHang, newGia));
+            listComputer.sort((a, b) => a.gia - b.gia);
             fillAll();
         }
     </script>
