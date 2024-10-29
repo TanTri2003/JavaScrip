@@ -19,7 +19,10 @@
             array.push(element);
         }
         console.log(array);
-        let k = +prompt("Nhập vào số nguyên K");
+        let k;
+        do {
+            k = +prompt("Nhập vào số nguyên K");
+        } while (n>=0);
         let dem = 0;
         for (let i = 0; i < array.length; i++) {
             for (let j = i + 1; j < array.length; j++) {
