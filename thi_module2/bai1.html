@@ -5,33 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
 </head>
 
 <body>
     <script>
         let n;
         do {
-            n = +prompt("nhập vào độ dài của mảng");
-        } while (n <= 0 || n > 50)
+            n = +prompt("Nhập vào độ dài của mảng");
+        } while (n >= 20);
         let array = [];
         for (let i = 0; i < n; i++) {
             let element = +prompt("nhập phần tử thứ " + i);
             array.push(element);
         }
-        let tongChan = 0;
-        let tongLe = 0;
+        console.log(array);
+        let tong = 0;
         for (let i = 0; i < array.length; i++) {
-            if (i % 2 === 0) {
-                tongChan += array[i];
-            } else {
-                tongLe += array[i];
+            if (array[i] % 3 === 0 && array[i] % 5 === 0) {
+                tong += array[i];
             }
         }
-        //(Math.floor(number / 5) + 1) * 5; 
-        document.write("mảng vừa nhập là: " + array + `<br>`);
-        document.write("Kết quả = " + (tongChan - tongLe));
-        
+        document.write("Tổng của các số là bội chung của 3 và 5 = " + tong);
     </script>
 </body>
 

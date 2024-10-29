@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function diemSo(number) {
+            let boiSo = Math.floor((number / 5) + 1) * 5;
+            // console.log(boiSo);
+            if (number < 48 && number >= 0) {
+                console.log("Bạn đã bị trượt");
+            } else if (boiSo - number < 3) {
+                console.log("Bạn đã đậu điểm sau khi làm tròn: " + boiSo);
+            } else {
+                console.log("Bạn đã đậu điểm không làm tròn: " + number);
+            }
+        }
+        let diem;
+        do {
+            diem = +prompt("Nhập điểm số");
+        } while (diem < 0 || diem > 100);
+        diemSo(diem);
+    </script>
+</body>
+
+</html>

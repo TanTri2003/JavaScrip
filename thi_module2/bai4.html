@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: center;
+            vertical-align: middle;
+            width: calc(100% / 6);
+        }
+        button {
+            background-color: pink;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 20px;
+            border: none;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: rgb(179, 179, 246);
+        }
+    </style>
+</head>
+<body>
+    <h1>Quản lý khách hàng</h1>
+    <button onclick="addKhachHang()">Thêm mới khách hàng</button>
+    <br>
+    <br>
+    <table border="1" style=" border-collapse:collapse;">
+        <tr>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+        </tr>
+        <tbody id="listKhachHang">
+        </tbody>
+    </table>
+    <script>
+        class khachHang{
+            constructor(ma,ten,sđt,diaChi,email){
+                this.ma=ma;
+                this.ten=ten;
+                this.sđt=sđt;
+                this.diaChi=diaChi;
+                this.email=email;
+            }
+        }
+        let listKhachHang = [new khachHang("01","Võ Tấn Trí","0359694849","Quảng Nam","votantri2006@gmail.com")];
+        fillAll();
+        function fillAll() {
+            let stringKhachHang = '';
+            for (let i = 0; i < listKhachHang.length; i++) {
+                stringKhachHang += `            
+        <tr>
+            <td>${listKhachHang[i].ma}</td>
+            <td>${listKhachHang[i].ten}</td>
+            <td>${listKhachHang[i].sđt}</td>
+            <td>${listKhachHang[i].diaChi}</td>
+            <td>${listKhachHang[i].email}</td>
+        </tr>`;
+            }
+            document.getElementById('listKhachHang').innerHTML = stringKhachHang;
+        }
+        function addKhachHang() {
+            let newMa = prompt("Vui lòng nhập mã khách hàng");
+            let newTen = prompt("Vui lòng nhập tên khách hàng");
+            let newSđt = prompt("Vui lòng nhập số điện thoại khách hàng");
+            let newDiaChi = prompt("Vui lòng nhập địa chỉ khách hàng");
+            let newEmail= prompt("Vui lòng nhập email khách hàng");
+            listKhachHang.push(new khachHang(newMa,newTen,newSđt,newDiaChi,newEmail));
+            fillAll();
+        }
+    </script>
+</body>
+</html>
